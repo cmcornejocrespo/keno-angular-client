@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="YES">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>HTML</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="ivano.vingiani"/>
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="lib/hammer-1.0.5.js"></script>
+    <script src="lib/angular-hammer-v2.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+
+</head>
+
+<body ng-app="kenoModule">
+<div class="gameContainer">
+
+    <div class="top-nav" ng-controller="PanelCtrl">
+        <div class="balance" ng-controller="BalanceCtrl">
+            Credit: {{getBalance()}}£
+        </div>
+    </div>
+
+
+    <div id="oddsPanel" ng-class="getPayoutPanelClass()" class="alert alert-info" ng-controller="EvolveGamingCtrl">
+
+        <div class="divTable">
+            <div class="row">
+                <div class="payoutCell separator">Hits</div>
+                <div class="payoutCell separator">Win</div>
+            </div>
+            <div class="row" ng-repeat="matches in getSpotsSelect()">
+                <div class="payoutCell">{{matches.match}}</div>
+                <div class="payoutCell">{{matches.multiplier}}</div>
+            </div>
+        </div>
+
+    </div>
+    <div id="game">
+        <div id="animation"></div>
+        <div id="numbersContainer">
+            <div class="divTable" ng-controller="NumbersTableCtrl">
+                <div class="row" ng-repeat="row in numbersTable">
+                    <div class="numbersCell" ng-repeat="number in row" id="cell{{number}}">
+                        <button class="numberBtn" ng-class="getStyle(number)" hm-tap="select(number)">
+                            {{number.number}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel"></div>
+    </div>
+    <div id="menu-bottom" style="position:relative" ng-controller="ButtonsCtrl">
+        <div modal="shouldBeOpen" close="close()" options="opts">
+            <div class="modal-body">
+                {{message}}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning cancel" hm-tap="close()">Ok</button>
+            </div>
+        </div>
+        <div class="left">
+            <button class="button" ng-class="isStake(1)" hm-tap="setStake(1)">£1</button>
+            <button class="button" ng-class="isStake(5)" hm-tap="setStake(5)">£5</button>
+            <button class="button" ng-class="isStake(10)" hm-tap="setStake(10)">£10</button>
+            <button class="button" ng-class="isStake(50)" hm-tap="setStake(50)">£50</button>
+            <button class="button" ng-class="isStake(100)" hm-tap="setStake(100)">£100</button>
+            <div class="winning-message" style="color:white;font-weight: bold">Winnings: £{{getWinningAmount()}}</div>
+        </div>
+        <div class="right">
+            <button class="button" hm-tap="clear(1)">Clear</button>
+            <button class="button" hm-tap="quickPick()">Quick Pick</button>
+            <button class="button" hm-tap="play()">Play</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

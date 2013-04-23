@@ -1,0 +1,50 @@
+{"highNumberOnCard": 80,
+    "numberOfDraws": 10,
+    "payouts": [
+        {
+
+            "id": 1,
+            "numSpots": 1,
+            "numMatches": 1,
+            "multiplier": 3
+        },
+        {
+            "id": 2,
+            "numSpots": 2,
+            "numMatches": 2,
+            "multiplier": 12
+        },
+        {
+            "id": 3,
+            "numSpots": 3,
+            "numMatches": 3,
+            "multiplier": 42
+        },
+        {
+            "id": 4,
+            "numSpots": 3,
+            "numMatches": 2,
+            "multiplier": 1
+        },
+        {
+            "id": 5,
+            "numSpots": 4,
+            "numMatches": 4,
+            "multiplier": 120
+        },
+        {
+            "id": 6,
+            "numSpots": 4,
+            "numMatches": 3,
+            "multiplier": 3
+        },
+        {
+            "id": 7,
+            "numSpots": 4,
+            "numMatches": 2,
+            "multiplier": 1
+        }
+
+    ]
+
+}

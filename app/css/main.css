@@ -1,0 +1,159 @@
+body {
+    overflow: hidden;
+}
+
+/*.container {*/
+    /*width: 480px;*/
+    /*height: 320px;*/
+    /*position: fixed;*/
+/*}*/
+
+#numbersContainer {
+    width: 320px;
+    height: 250px;
+    display: inline-block;
+}
+
+#game {
+    /*margin-top: 20px;*/
+}
+
+#menu-bottom {
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 480px;
+}
+
+#menu-bottom div{
+    display: inline-block;
+}
+
+.right {
+    position: absolute;
+    right: 10px;
+}
+
+#oddsPanel{
+    /*width:50px;*/
+    position:fixed;
+    left:-152px;
+}
+
+.numberBtn {
+    height: 32px;
+    width: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid #a89d9c;
+    -webkit-box-shadow: 0px 2px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,1);
+    box-shadow: 0px 2px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,1);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.5), 0px 1px 0px rgba(255,255,255,0.3);
+    color: #000000;
+    background: -webkit-gradient(        linear, left top, left bottom,        from(#ebebeb),        color-stop(0.25, #cccccc),        color-stop(0.50, #c4c4c4),        color-stop(0.75, #cccccc),        to(#adadad));
+}
+
+
+.divTable {
+    display: table;
+}
+
+.row {
+    display: table-row;
+    width: auto;
+}
+
+.numbersCell{
+    display: table-cell;
+    width: 32px;
+    height: 32px;
+}
+
+.payoutCell{
+    display: table-cell;
+    width: 30px;
+}
+
+.separator {
+    border-bottom: solid 1px #000000;
+}
+
+.gameContainer {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 480px;
+    min-height: 320px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background: #196298;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#196298), color-stop(100%,#0c2a3f));
+    background: -webkit-linear-gradient(top, #196298 0%,#0c2a3f 100%);
+}
+
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 5px 5px;
+    background: -webkit-gradient( linear, left top, left bottom, from(#ff2819), to(#ab0000));
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid #7d0000;
+    -webkit-box-shadow: 0px 2px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,1);
+    box-shadow: 0px 2px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,1);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.5), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.balance{
+    margin-right: 10px;
+    margin-top: 3px;
+    position: relative;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.top-nav {
+    height: 25px;
+}
+
+.leftPanel {
+    -webkit-transform: translateX(120px);
+    -webkit-transition: -webkit-transform 300ms;
+}
+.leftPanelHidden{
+    -webkit-transform: translateX(-120px);
+    -webkit-transition: -webkit-transform 500ms;
+}
+.payoutPanel {
+    -webkit-transform: translateX(155px);
+    -webkit-transition: -webkit-transform 300ms;
+}
+.payoutPanelHidden{
+    -webkit-transform: translateX(-155px);
+    -webkit-transition: -webkit-transform 500ms;
+}
+#animation {
+    display: inline-block;
+    width: 120px;
+    height: 250px;
+}
+
+.ball {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("../img/ball_clear.png") no-repeat;
+    text-align: center;
+    line-height: 20px;
+}
+
+.winner {
+    background: url("../img/ball_win.png") no-repeat;
+}
